@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        h1{
+            font-style: italic;
+            text-align: center;
+        }
+        button{
+            align: center;
+            background:linear-gradient(to right,#4E2394,#0e886e); border: none; color: white; padding: 10px 20x; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;
+        }
+        body{
+            background: linear-gradient(rgba(255, 0, 21, 0.692), rgb(184, 181, 17));
+        }
+    </style>
+    <h1>PROVEDORES DE PAN DULCE</h1>
+    <form method="POST" action="proveedores.php" > 
+        <p>
+            <label for="provedor">Nombre del provedor</label>
+            <input type="text" id="name" name="provedor">
+        </p>
+        <p>
+            <label for="Nombre de la compañia">Nombre de la copañia</label>
+            <input type="text" id="name" name="compañia">
+        </p>
+        <p>
+            <label for="numero del provedor">Numero del provedor</label>
+            <input type="number" id="number" number="telefono" >
+        </p>
+        <p>
+            <label for="msg">mensaje:</label>
+            <textarea  id="msg" name="user_messaje"></textarea>
+        </p>
+        <p class="button">
+            <button type="submit">Enviar mensaje al provedor</button>
+        </p> 
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        h1{
+            font-style: italic;
+            text-align: initial;
+        }
+        button{
+            align: center;
+            background:linear-gradient(to right,#59e01ace,#d67a11); border: none; color: white; padding: 10px 20x; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;
+        }
+        body{
+            background: linear-gradient(rgb(238, 128, 25), rgb(219, 66, 161));
+        }
+    </style>
+    <h1>PROVEDORES DE CARNES FRIAS</h1>
+    <form> <form method="POST" action="tiendapg11.php" > 
+        <p>
+            <label for="provedor">Nombre del provedor</label>
+            <input type="text" id="name" name="nombre">
+        </p>
+        <p>
+            <label for="Nombre de la compania">Nombre de la carniceria</label>
+            <input type="text" id="name" name="carniceria">
+        </p>
+        <p>
+            <label for="numeroa">Numero del provedor o empresa</label>
+            <input type="number" id="number" number="Numero" >
+        </p>
+        <p>
+            <label for="msg">mensaje:</label>
+            <textarea  id="msg" name="user_messaje"></textarea>
+        </p>
+        <p class="button">
+            <button type="submit">Enviar mensaje al provedor</button>
+        </p>
+        
+        <canvas id="canvas"width="400" height="400"></canvas>
+        <script>
+            const canvas= document.getElementById('canvas');
+            const ctx= canvas.getContext('2d');
+
+            let cuadrado={
+                x: canvas.whidth/2,
+                y: canvas.height/2,
+                tamaño:100,
+                angulo:0
+            };
+
+            function dibujarCuadrado() {
+                ctx.clearRect(0,0, canvas.whidth, canvas.height);
+                ctx.save();
+                ctx.translate(cuadrado.x, cuadrado.y);
+                ctx.rotate(cuadrado.angulo);
+                ctx.fillStyle='blue';
+                ctx.fillRect(-cuadrado.tamaño /2,-cuadrado.tamaño /2, cuadrado.tamaño, cuadrado.tamaño);
+                ctx.restore();
+            }
+
+            function animar() {
+                dibujarCuadrado();
+                cuadrado.angulo += 0.01;
+                requestAnimationFrame(animar);
+            }
+
+            animar();
+        </script>
+</body>
+</html>

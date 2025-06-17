@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        h1{
+            font-style: oblique;
+            background: linear-gradient(rgb(29, 5, 133), rgb(31, 121, 4));
+        }
+        body{
+         text-align: center;
+        }
+        form{
+            display: inline-block;
+            padding: 2em;
+            border: 2px solid;
+            border-radius: 2em;
+        }
+        body{
+            background: linear-gradient(rgba(255, 0, 21, 0.692), rgb(149, 13, 167));
+        }
+    </style>
+    <h1>PROVEDORES DE BOTANAS</h1>
+    <form method="POST" action="tiendapg9.php" > 
+        <p>
+            <label for="provedor">Nombre del provedor</label>
+            <input type="text" id="name" name="provedor">
+        </p>
+        <p>
+            <label for="Nombre de la compania">Nombre de la copania</label>
+            <input type="text" id="name" name="compania">
+        </p>
+        <p>
+            <label for="numerodelprovedor">Numero del provedor</label>
+            <input type="number" id="number" number="num" >
+        </p>
+        <p>
+            <label for="mensaje">mensaje:</label>
+            <textarea  id="msg" name="mensaje"></textarea>
+        </p>
+        <p class="button">
+            <button type="submit">Enviar mensaje al provedor</button>
+        </p> 
+
+  <canvas id="canvas" width="400" height="400"></canvas>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    let circulo = {
+      x: 20,
+      y: 20,
+      vx: 3,
+      vy: 3,
+      radio: 20,
+      color: 'blue'
+    };
+
+    function dibujarCirculo() {
+      ctx.fillStyle = circulo.color;
+      ctx.beginPath();
+      ctx.arc(circulo.x, circulo.y, circulo.radio, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+
+    function actualizarCirculo() {
+      circulo.x += circulo.vx;
+      circulo.y += circulo.vy;
+
+      if (circulo.x + circulo.radio > canvas.width || circulo.x - circulo.radio < 0) {
+        circulo.vx = -circulo.vx;
+      }
+
+      if (circulo.y + circulo.radio > canvas.height || circulo.y - circulo.radio < 0) {
+        circulo.vy = -circulo.vy;
+      }
+    }
+
+    function animar() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      dibujarCirculo();
+      actualizarCirculo();
+      requestAnimationFrame(animar);
+    }
+
+    animar();
+  </script>
+
+</body>
+</html>
